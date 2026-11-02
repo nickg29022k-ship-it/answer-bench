@@ -1,0 +1,62 @@
+# Scoring rubric for the LLM response benchmark.
+# Every dimension is scored 1-5 (higher is always better). Anchors describe what each
+# score level looks like so that different reviewers map the same response to the same number.
+# Weights are used for the "overall" score in model comparison.
+name: default
+version: 1
+scale: [1, 5]
+dimensions:
+  factual_accuracy:
+    description: Are the claims in the response true, judged against the reference answer and general knowledge?
+    weight: 1.0
+    anchors:
+      1: Core answer is wrong, or most claims are false.
+      2: Contains at least one significant factual error that would mislead the reader.
+      3: Mostly correct, but with an imprecise or partially wrong statement.
+      4: Correct; at most a minor imprecision that does not change the meaning.
+      5: Fully correct and precise; every claim checks out against the reference.
+  relevance:
+    description: Does the response address the question that was asked, without drifting off topic?
+    weight: 1.0
+    anchors:
+      1: Does not address the prompt.
+      2: Addresses the prompt only partially; large off-topic portions.
+      3: On topic overall but includes a noticeable tangent or padding.
+      4: Focused, with a small amount of unnecessary material.
+      5: Every sentence serves the request.
+  completeness:
+    description: Does the response cover the key points listed in the reference label?
+    weight: 1.0
+    anchors:
+      1: Misses essentially all key points.
+      2: Covers only one key point, or covers several superficially.
+      3: Covers most key points but omits an important one.
+      4: Covers all important points; a minor detail is missing.
+      5: Covers every key point with appropriate depth.
+  instruction_following:
+    description: Does the response respect explicit instructions (length limits, format, number of items, audience)?
+    weight: 1.0
+    anchors:
+      1: Ignores the instructions entirely.
+      2: Violates two or more explicit constraints.
+      3: Violates one explicit constraint (for example, over the word limit or wrong format).
+      4: Follows the instructions with a small deviation in spirit (tone, audience).
+      5: Follows every explicit and implicit instruction.
+  hallucination:
+    description: Freedom from fabricated content. Higher means fewer unsupported or invented claims.
+    weight: 1.0
+    anchors:
+      1: Invents facts, sources or details that are presented as true and change the answer.
+      2: Contains a clearly fabricated or unsupported claim.
+      3: Contains a speculative claim stated with more confidence than warranted.
+      4: No fabrications; perhaps one loosely supported generalization.
+      5: Everything stated is supported by the prompt, the reference, or well-established knowledge.
+  style:
+    description: Clarity, concision and tone appropriate to the request.
+    weight: 0.5
+    anchors:
+      1: Hard to read; disorganized or inappropriate tone.
+      2: Readable but cluttered with filler, pleasantries or awkward phrasing.
+      3: Clear, with some filler or a layout that does not fit the request.
+      4: Clear and well organized with minor verbosity.
+      5: Concise, well organized, and pitched at the right level for the audience.

@@ -1,0 +1,199 @@
+{
+  "model": "atlas-v2",
+  "rank": 2,
+  "overall": {
+    "mean": 4.454,
+    "ci_low": 4.32,
+    "ci_high": 4.573
+  },
+  "dimensions": {
+    "factual_accuracy": {
+      "mean": 4.475,
+      "ci_low": 4.167,
+      "ci_high": 4.733,
+      "delta_vs_others": 0.408
+    },
+    "relevance": {
+      "mean": 4.692,
+      "ci_low": 4.533,
+      "ci_high": 4.833,
+      "delta_vs_others": 0.154
+    },
+    "completeness": {
+      "mean": 4.475,
+      "ci_low": 4.208,
+      "ci_high": 4.708,
+      "delta_vs_others": 1.012
+    },
+    "instruction_following": {
+      "mean": 4.4,
+      "ci_low": 4.133,
+      "ci_high": 4.633,
+      "delta_vs_others": -0.183
+    },
+    "hallucination": {
+      "mean": 4.483,
+      "ci_low": 4.1,
+      "ci_high": 4.808,
+      "delta_vs_others": 0.346
+    },
+    "style": {
+      "mean": 3.942,
+      "ci_low": 3.75,
+      "ci_high": 4.117,
+      "delta_vs_others": -0.625
+    }
+  },
+  "strengths": [
+    {
+      "dimension": "completeness",
+      "mean": 4.475,
+      "delta_vs_others": 1.012,
+      "summary": "Covers the reference key points well.",
+      "examples": [
+        {
+          "response_id": "r-p040-atlas",
+          "prompt_id": "p040",
+          "prompt": "How long should a cover letter be?",
+          "consensus_score": 5.0,
+          "response_excerpt": "That's a great question, and lots of people wonder about it. A cover letter should usually fit on one page. Aim for roughly 250 to 400 words. Three or four short paragraphs is a common structure. I hope this helps! Le...",
+          "annotator_rationales": {
+            "ann-01": "Covers all key points.",
+            "ann-02": "Covers all key points.",
+            "ann-03": "Covers all key points."
+          }
+        }
+      ]
+    },
+    {
+      "dimension": "factual_accuracy",
+      "mean": 4.475,
+      "delta_vs_others": 0.408,
+      "summary": "Claims are reliably correct.",
+      "examples": [
+        {
+          "response_id": "r-p038-atlas",
+          "prompt_id": "p038",
+          "prompt": "Tell me about Mercury.",
+          "consensus_score": 5.0,
+          "response_excerpt": "That's a great question, and lots of people wonder about it. Mercury is also a chemical element, symbol Hg, and the only metal that is liquid at room temperature. In Roman mythology, Mercury was the messenger of the g...",
+          "annotator_rationales": {
+            "ann-01": "Statements agree with the reference.",
+            "ann-02": "Statements agree with the reference.",
+            "ann-03": "Statements agree with the reference."
+          }
+        }
+      ]
+    },
+    {
+      "dimension": "hallucination",
+      "mean": 4.483,
+      "delta_vs_others": 0.346,
+      "summary": "Rarely introduces unsupported content.",
+      "examples": [
+        {
+          "response_id": "r-p038-atlas",
+          "prompt_id": "p038",
+          "prompt": "Tell me about Mercury.",
+          "consensus_score": 5.0,
+          "response_excerpt": "That's a great question, and lots of people wonder about it. Mercury is also a chemical element, symbol Hg, and the only metal that is liquid at room temperature. In Roman mythology, Mercury was the messenger of the g...",
+          "annotator_rationales": {
+            "ann-01": "No fabricated content noticed.",
+            "ann-02": "No fabricated content noticed.",
+            "ann-03": "No fabricated content noticed."
+          }
+        }
+      ]
+    }
+  ],
+  "weaknesses": [
+    {
+      "dimension": "style",
+      "mean": 3.942,
+      "delta_vs_others": -0.625,
+      "advice": "Cut conversational boilerplate (greetings, sign-offs) and match the requested layout.",
+      "examples": [
+        {
+          "response_id": "r-p021-atlas",
+          "prompt_id": "p021",
+          "prompt": "Explain recursion to a 10-year-old in under 60 words.",
+          "consensus_score": 2.0,
+          "response_excerpt": "Absolutely, here you go! - Recursion is when you solve a problem by solving a smaller version of the same problem. - It is like nesting dolls: you open one doll to find a smaller one inside, again and again. - Every r...",
+          "annotator_rationales": {
+            "ann-01": "Style issues: unnecessary pleasantries, wrong layout.",
+            "ann-02": "Style issues: unnecessary pleasantries, wrong layout.",
+            "ann-03": "Style issues: unnecessary pleasantries, wrong layout."
+          }
+        },
+        {
+          "response_id": "r-p001-atlas",
+          "prompt_id": "p001",
+          "prompt": "Why is the sky blue? Answer in under 80 words.",
+          "consensus_score": 3.0,
+          "response_excerpt": "Great question! - The sky looks blue because of Rayleigh scattering of sunlight by air molecules. - Shorter wavelengths like blue scatter much more strongly than longer red wavelengths. - We see blue rather than viole...",
+          "annotator_rationales": {
+            "ann-01": "Style issues: unnecessary pleasantries, wrong layout.",
+            "ann-02": "Style issues: unnecessary pleasantries, wrong layout.",
+            "ann-03": "Style issues: unnecessary pleasantries, wrong layout."
+          }
+        }
+      ]
+    },
+    {
+      "dimension": "instruction_following",
+      "mean": 4.4,
+      "delta_vs_others": -0.183,
+      "advice": "Explicit format and length constraints are often ignored; add constraint checks or few-shot examples.",
+      "examples": [
+        {
+          "response_id": "r-p021-atlas",
+          "prompt_id": "p021",
+          "prompt": "Explain recursion to a 10-year-old in under 60 words.",
+          "consensus_score": 2.33,
+          "response_excerpt": "Absolutely, here you go! - Recursion is when you solve a problem by solving a smaller version of the same problem. - It is like nesting dolls: you open one doll to find a smaller one inside, again and again. - Every r...",
+          "annotator_rationales": {
+            "ann-01": "Violates instructions: over word limit (75 > 60); expected a paragraph, got bullets",
+            "ann-02": "Slightly off the requested format, acceptable overall.",
+            "ann-03": "Violates instructions: over word limit (75 > 60); expected a paragraph, got bullets"
+          }
+        },
+        {
+          "response_id": "r-p001-atlas",
+          "prompt_id": "p001",
+          "prompt": "Why is the sky blue? Answer in under 80 words.",
+          "consensus_score": 3.0,
+          "response_excerpt": "Great question! - The sky looks blue because of Rayleigh scattering of sunlight by air molecules. - Shorter wavelengths like blue scatter much more strongly than longer red wavelengths. - We see blue rather than viole...",
+          "annotator_rationales": {
+            "ann-01": "Violates instructions: expected a paragraph, got bullets",
+            "ann-02": "Violates instructions: expected a paragraph, got bullets",
+            "ann-03": "Violates instructions: expected a paragraph, got bullets"
+          }
+        }
+      ]
+    }
+  ],
+  "win_rate_vs": {
+    "borealis-mini": 0.8,
+    "cirrus-large": 0.487
+  },
+  "by_category": {
+    "explanation": 4.429,
+    "factual_qa": 4.528,
+    "instruction_following": 4.394,
+    "open_ended": 4.465,
+    "summarization": 4.411
+  },
+  "counts": {
+    "responses": 40,
+    "likely_hallucinations": 5,
+    "instruction_violations": 4,
+    "flagged_for_adjudication": 10
+  },
+  "hallucination_examples": [
+    "r-p003-atlas",
+    "r-p009-atlas",
+    "r-p018-atlas",
+    "r-p025-atlas",
+    "r-p029-atlas"
+  ]
+}

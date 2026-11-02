@@ -1,0 +1,170 @@
+{
+  "model": "borealis-mini",
+  "rank": 3,
+  "overall": {
+    "mean": 3.92,
+    "ci_low": 3.73,
+    "ci_high": 4.092
+  },
+  "dimensions": {
+    "factual_accuracy": {
+      "mean": 3.683,
+      "ci_low": 3.35,
+      "ci_high": 4.008,
+      "delta_vs_others": -0.779
+    },
+    "relevance": {
+      "mean": 4.242,
+      "ci_low": 3.983,
+      "ci_high": 4.492,
+      "delta_vs_others": -0.521
+    },
+    "completeness": {
+      "mean": 3.183,
+      "ci_low": 2.883,
+      "ci_high": 3.492,
+      "delta_vs_others": -0.925
+    },
+    "instruction_following": {
+      "mean": 4.575,
+      "ci_low": 4.366,
+      "ci_high": 4.767,
+      "delta_vs_others": 0.079
+    },
+    "hallucination": {
+      "mean": 3.717,
+      "ci_low": 3.25,
+      "ci_high": 4.158,
+      "delta_vs_others": -0.804
+    },
+    "style": {
+      "mean": 4.317,
+      "ci_low": 4.092,
+      "ci_high": 4.517,
+      "delta_vs_others": -0.063
+    }
+  },
+  "strengths": [],
+  "weaknesses": [
+    {
+      "dimension": "completeness",
+      "mean": 3.183,
+      "delta_vs_others": -0.925,
+      "advice": "Responses omit reference key points; prompt the model to cover all parts of multi-part questions.",
+      "examples": [
+        {
+          "response_id": "r-p009-borealis",
+          "prompt_id": "p009",
+          "prompt": "What is the speed of light in a vacuum?",
+          "consensus_score": 2.0,
+          "response_excerpt": "It is a universal physical constant, written as c. On a related note, the history of scientific discovery is full of surprising stories.",
+          "annotator_rationales": {
+            "ann-01": "Missing: The speed of light in a vacuum is exactly 299,792,458 met...; No object with mass can reach the speed of light.",
+            "ann-02": "Missing: The speed of light in a vacuum is exactly 299,792,458 met...; No object with mass can reach the speed of light.",
+            "ann-03": "Missing: The speed of light in a vacuum is exactly 299,792,458 met...; No object with mass can reach the speed of light."
+          }
+        },
+        {
+          "response_id": "r-p018-borealis",
+          "prompt_id": "p018",
+          "prompt": "Summarize this survey in at most 60 words. A survey of 2,000 office workers found that 61 percent prefer a hybrid sch...",
+          "consensus_score": 2.0,
+          "response_excerpt": "Of 2,000 office workers surveyed, 61 percent prefer hybrid, 24 percent fully remote, and 15 percent full-time office.",
+          "annotator_rationales": {
+            "ann-01": "Missing: Commute time was the main reason for wanting remote days,...; Managers favored full-time office work more often than st...",
+            "ann-02": "Covers the main points; a minor detail is missing.",
+            "ann-03": "Missing: Commute time was the main reason for wanting remote days,...; Managers favored full-time office work more often than st..."
+          }
+        }
+      ]
+    },
+    {
+      "dimension": "hallucination",
+      "mean": 3.717,
+      "delta_vs_others": -0.804,
+      "advice": "The model asserts unsupported content; penalize unsupported specifics and encourage hedging.",
+      "examples": [
+        {
+          "response_id": "r-p015-borealis",
+          "prompt_id": "p015",
+          "prompt": "Summarize this earnings report in one paragraph of at most 60 words. Northwind Outfitters reported third-quarter reve...",
+          "consensus_score": 1.33,
+          "response_excerpt": "- Northwind's third-quarter revenue rose 9 percent to $412 million, mostly from online sales. - The CEO announced she will step down at the end of the year.",
+          "annotator_rationales": {
+            "ann-01": "Asserts unsupported content: \"The CEO announced she will step down at the end of the year.\"",
+            "ann-02": "Asserts unsupported content: \"The CEO announced she will step down at the end of the year.\"",
+            "ann-03": "Asserts unsupported content: \"The CEO announced she will step down at the end of the year.\""
+          }
+        },
+        {
+          "response_id": "r-p030-borealis",
+          "prompt_id": "p030",
+          "prompt": "Explain how to reverse a singly linked list in place.",
+          "consensus_score": 1.33,
+          "response_excerpt": "Walk the list while keeping three pointers: previous, current, and next. Reversing a linked list requires copying it into a new array first. This is an important point to keep in mind.",
+          "annotator_rationales": {
+            "ann-01": "Asserts unsupported content: \"Reversing a linked list requires copying it into a new array first.\"",
+            "ann-02": "Asserts unsupported content: \"Reversing a linked list requires copying it into a new array first.\"",
+            "ann-03": "Asserts unsupported content: \"Reversing a linked list requires copying it into a new array first.\""
+          }
+        }
+      ]
+    },
+    {
+      "dimension": "factual_accuracy",
+      "mean": 3.683,
+      "delta_vs_others": -0.779,
+      "advice": "Audit the incorrect claims below; consider retrieval grounding or answer verification for factual prompts.",
+      "examples": [
+        {
+          "response_id": "r-p031-borealis",
+          "prompt_id": "p031",
+          "prompt": "What does git rebase do, and when should you avoid it?",
+          "consensus_score": 2.0,
+          "response_excerpt": "This produces a linear history without merge commits. Rebase permanently deletes the branch you rebase onto. Many textbooks cover this topic in much greater depth across several chapters.",
+          "annotator_rationales": {
+            "ann-01": "Incorrect claim: \"Rebase permanently deletes the branch you rebase onto.\"",
+            "ann-02": "Incorrect claim: \"Rebase permanently deletes the branch you rebase onto.\"",
+            "ann-03": "Incorrect claim: \"Rebase permanently deletes the branch you rebase onto.\""
+          }
+        },
+        {
+          "response_id": "r-p004-borealis",
+          "prompt_id": "p004",
+          "prompt": "What is the boiling point of water at sea level, and how does altitude change it?",
+          "consensus_score": 2.33,
+          "response_excerpt": "At sea level, water boils at 100 degrees Celsius, or 212 degrees Fahrenheit. Water boils at a higher temperature on mountains because the air is thinner. There are many more details that could be covered here as well.",
+          "annotator_rationales": {
+            "ann-01": "Incorrect claim: \"Water boils at a higher temperature on mountains because the air is thinner.\"",
+            "ann-02": "Incorrect claim: \"Water boils at a higher temperature on mountains because the air is thinner.\"",
+            "ann-03": "Incorrect claim: \"Water boils at a higher temperature on mountains because the air is thinner.\""
+          }
+        }
+      ]
+    }
+  ],
+  "win_rate_vs": {
+    "atlas-v2": 0.2,
+    "cirrus-large": 0.225
+  },
+  "by_category": {
+    "explanation": 3.758,
+    "factual_qa": 4.174,
+    "instruction_following": 3.61,
+    "open_ended": 3.884,
+    "summarization": 4.03
+  },
+  "counts": {
+    "responses": 40,
+    "likely_hallucinations": 14,
+    "instruction_violations": 3,
+    "flagged_for_adjudication": 17
+  },
+  "hallucination_examples": [
+    "r-p004-borealis",
+    "r-p012-borealis",
+    "r-p015-borealis",
+    "r-p016-borealis",
+    "r-p019-borealis"
+  ]
+}

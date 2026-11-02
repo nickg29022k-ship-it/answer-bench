@@ -1,0 +1,33 @@
+[project]
+name = "answer-bench"
+version = "0.1.0"
+description = "Benchmark and tooling for evaluating LLM responses with multidimensional rubrics, inter-annotator agreement and disagreement workflows."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.28.1",
+    "numpy>=2.4.6",
+    "pydantic>=2.13.5",
+    "pyyaml>=6.0.3",
+    "rich>=15.0.0",
+    "typer>=0.27.3",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[project.scripts]
+respbench = "llm_response_benchmark.cli:app"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.uv.build-backend]
+module-name = "llm_response_benchmark"

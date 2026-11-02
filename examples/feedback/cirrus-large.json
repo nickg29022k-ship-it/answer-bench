@@ -1,0 +1,166 @@
+{
+  "model": "cirrus-large",
+  "rank": 1,
+  "overall": {
+    "mean": 4.47,
+    "ci_low": 4.336,
+    "ci_high": 4.601
+  },
+  "dimensions": {
+    "factual_accuracy": {
+      "mean": 4.45,
+      "ci_low": 4.167,
+      "ci_high": 4.7,
+      "delta_vs_others": 0.371
+    },
+    "relevance": {
+      "mean": 4.833,
+      "ci_low": 4.683,
+      "ci_high": 4.95,
+      "delta_vs_others": 0.367
+    },
+    "completeness": {
+      "mean": 3.742,
+      "ci_low": 3.442,
+      "ci_high": 4.058,
+      "delta_vs_others": -0.087
+    },
+    "instruction_following": {
+      "mean": 4.592,
+      "ci_low": 4.392,
+      "ci_high": 4.783,
+      "delta_vs_others": 0.104
+    },
+    "hallucination": {
+      "mean": 4.558,
+      "ci_low": 4.267,
+      "ci_high": 4.8,
+      "delta_vs_others": 0.458
+    },
+    "style": {
+      "mean": 4.817,
+      "ci_low": 4.708,
+      "ci_high": 4.908,
+      "delta_vs_others": 0.688
+    }
+  },
+  "strengths": [
+    {
+      "dimension": "style",
+      "mean": 4.817,
+      "delta_vs_others": 0.688,
+      "summary": "Concise and cleanly formatted.",
+      "examples": [
+        {
+          "response_id": "r-p035-cirrus",
+          "prompt_id": "p035",
+          "prompt": "What's the best programming language?",
+          "consensus_score": 5.0,
+          "response_excerpt": "Consider the ecosystem, available libraries, and what your team already knows.",
+          "annotator_rationales": {
+            "ann-01": "Tone works for me.",
+            "ann-02": "Tone is a matter of taste here.",
+            "ann-03": "Reads a bit flat."
+          }
+        }
+      ]
+    },
+    {
+      "dimension": "hallucination",
+      "mean": 4.558,
+      "delta_vs_others": 0.458,
+      "summary": "Rarely introduces unsupported content.",
+      "examples": [
+        {
+          "response_id": "r-p040-cirrus",
+          "prompt_id": "p040",
+          "prompt": "How long should a cover letter be?",
+          "consensus_score": 5.0,
+          "response_excerpt": "A cover letter should usually fit on one page.",
+          "annotator_rationales": {
+            "ann-01": "No fabricated content noticed.",
+            "ann-02": "No fabricated content noticed.",
+            "ann-03": "No fabricated content noticed."
+          }
+        }
+      ]
+    },
+    {
+      "dimension": "factual_accuracy",
+      "mean": 4.45,
+      "delta_vs_others": 0.371,
+      "summary": "Claims are reliably correct.",
+      "examples": [
+        {
+          "response_id": "r-p038-cirrus",
+          "prompt_id": "p038",
+          "prompt": "Tell me about Mercury.",
+          "consensus_score": 5.0,
+          "response_excerpt": "Mercury is also a chemical element, symbol Hg, and the only metal that is liquid at room temperature. In Roman mythology, Mercury was the messenger of the gods.",
+          "annotator_rationales": {
+            "ann-01": "Statements agree with the reference.",
+            "ann-02": "Statements agree with the reference.",
+            "ann-03": "Statements agree with the reference."
+          }
+        }
+      ]
+    }
+  ],
+  "weaknesses": [
+    {
+      "dimension": "completeness",
+      "mean": 3.742,
+      "delta_vs_others": -0.087,
+      "advice": "Responses omit reference key points; prompt the model to cover all parts of multi-part questions.",
+      "examples": [
+        {
+          "response_id": "r-p002-cirrus",
+          "prompt_id": "p002",
+          "prompt": "What causes the seasons on Earth?",
+          "consensus_score": 2.0,
+          "response_excerpt": "Distance is not the cause; Earth is actually closest to the Sun in early January.",
+          "annotator_rationales": {
+            "ann-01": "Missing: Seasons are caused by the tilt of Earth's axis, about 23....; The hemisphere tilted toward the Sun gets more direct sun...",
+            "ann-02": "Missing: Seasons are caused by the tilt of Earth's axis, about 23....; The hemisphere tilted toward the Sun gets more direct sun...",
+            "ann-03": "Missing: Seasons are caused by the tilt of Earth's axis, about 23....; The hemisphere tilted toward the Sun gets more direct sun..."
+          }
+        },
+        {
+          "response_id": "r-p009-cirrus",
+          "prompt_id": "p009",
+          "prompt": "What is the speed of light in a vacuum?",
+          "consensus_score": 2.0,
+          "response_excerpt": "It is a universal physical constant, written as c.",
+          "annotator_rationales": {
+            "ann-01": "Missing: The speed of light in a vacuum is exactly 299,792,458 met...; No object with mass can reach the speed of light.",
+            "ann-02": "Missing: The speed of light in a vacuum is exactly 299,792,458 met...; No object with mass can reach the speed of light.",
+            "ann-03": "Missing: The speed of light in a vacuum is exactly 299,792,458 met...; No object with mass can reach the speed of light."
+          }
+        }
+      ]
+    }
+  ],
+  "win_rate_vs": {
+    "atlas-v2": 0.512,
+    "borealis-mini": 0.775
+  },
+  "by_category": {
+    "explanation": 4.736,
+    "factual_qa": 4.442,
+    "instruction_following": 4.564,
+    "open_ended": 4.121,
+    "summarization": 4.442
+  },
+  "counts": {
+    "responses": 40,
+    "likely_hallucinations": 4,
+    "instruction_violations": 3,
+    "flagged_for_adjudication": 10
+  },
+  "hallucination_examples": [
+    "r-p003-cirrus",
+    "r-p012-cirrus",
+    "r-p025-cirrus",
+    "r-p039-cirrus"
+  ]
+}

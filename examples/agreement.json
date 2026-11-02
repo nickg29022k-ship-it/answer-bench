@@ -1,0 +1,279 @@
+{
+  "raters": [
+    "ann-01",
+    "ann-02",
+    "ann-03"
+  ],
+  "dimensions": {
+    "factual_accuracy": {
+      "n_units": 120,
+      "krippendorff_alpha_ordinal": 0.6883676084698525,
+      "krippendorff_alpha_interval": 0.7443004508936386,
+      "krippendorff_alpha_nominal": 0.3215894382604194,
+      "krippendorff_alpha_interval_bias_corrected": 0.8171660478323759,
+      "fleiss_kappa": 0.3196997152472172,
+      "mean_cohen_kappa": 0.333829976983504,
+      "mean_cohen_kappa_quadratic": 0.7421020242250796,
+      "pairwise": [
+        {
+          "rater_a": "ann-01",
+          "rater_b": "ann-02",
+          "n": 120,
+          "exact": 0.5666666666666667,
+          "within_1": 0.9333333333333333,
+          "mean_abs_diff": 0.5083333333333333,
+          "mean_signed_diff": -0.5083333333333333,
+          "cohen_kappa": 0.24710424710424717,
+          "cohen_kappa_quadratic": 0.7165850244926522
+        },
+        {
+          "rater_a": "ann-01",
+          "rater_b": "ann-03",
+          "n": 120,
+          "exact": 0.725,
+          "within_1": 0.9583333333333334,
+          "mean_abs_diff": 0.31666666666666665,
+          "mean_signed_diff": 0.1,
+          "cohen_kappa": 0.5752895752895753,
+          "cohen_kappa_quadratic": 0.8668639053254438
+        },
+        {
+          "rater_a": "ann-02",
+          "rater_b": "ann-03",
+          "n": 120,
+          "exact": 0.49166666666666664,
+          "within_1": 0.9,
+          "mean_abs_diff": 0.625,
+          "mean_signed_diff": 0.6083333333333333,
+          "cohen_kappa": 0.17909610855668945,
+          "cohen_kappa_quadratic": 0.6428571428571428
+        }
+      ]
+    },
+    "relevance": {
+      "n_units": 120,
+      "krippendorff_alpha_ordinal": 0.558251365228353,
+      "krippendorff_alpha_interval": 0.531049035369775,
+      "krippendorff_alpha_nominal": 0.2634627255891645,
+      "krippendorff_alpha_interval_bias_corrected": 0.5959971509971509,
+      "fleiss_kappa": 0.261411089727296,
+      "mean_cohen_kappa": 0.277977117754109,
+      "mean_cohen_kappa_quadratic": 0.5240857931428827,
+      "pairwise": [
+        {
+          "rater_a": "ann-01",
+          "rater_b": "ann-02",
+          "n": 120,
+          "exact": 0.775,
+          "within_1": 0.9583333333333334,
+          "mean_abs_diff": 0.2833333333333333,
+          "mean_signed_diff": -0.26666666666666666,
+          "cohen_kappa": 0.376923076923077,
+          "cohen_kappa_quadratic": 0.49350649350649356
+        },
+        {
+          "rater_a": "ann-01",
+          "rater_b": "ann-03",
+          "n": 120,
+          "exact": 0.6583333333333333,
+          "within_1": 0.9666666666666667,
+          "mean_abs_diff": 0.38333333333333336,
+          "mean_signed_diff": 0.2,
+          "cohen_kappa": 0.30606488011283484,
+          "cohen_kappa_quadratic": 0.7042828008157715
+        },
+        {
+          "rater_a": "ann-02",
+          "rater_b": "ann-03",
+          "n": 120,
+          "exact": 0.625,
+          "within_1": 0.9,
+          "mean_abs_diff": 0.5,
+          "mean_signed_diff": 0.4666666666666667,
+          "cohen_kappa": 0.15094339622641517,
+          "cohen_kappa_quadratic": 0.3744680851063831
+        }
+      ]
+    },
+    "completeness": {
+      "n_units": 120,
+      "krippendorff_alpha_ordinal": 0.6938125892099949,
+      "krippendorff_alpha_interval": 0.6555179645457423,
+      "krippendorff_alpha_nominal": 0.2653478854024556,
+      "krippendorff_alpha_interval_bias_corrected": 0.7438513873355701,
+      "fleiss_kappa": 0.26330150068212815,
+      "mean_cohen_kappa": 0.27131923041979783,
+      "mean_cohen_kappa_quadratic": 0.6623976982375336,
+      "pairwise": [
+        {
+          "rater_a": "ann-01",
+          "rater_b": "ann-02",
+          "n": 120,
+          "exact": 0.4166666666666667,
+          "within_1": 0.85,
+          "mean_abs_diff": 0.7416666666666667,
+          "mean_signed_diff": -0.6416666666666667,
+          "cohen_kappa": 0.19059549046058988,
+          "cohen_kappa_quadratic": 0.6260869565217391
+        },
+        {
+          "rater_a": "ann-01",
+          "rater_b": "ann-03",
+          "n": 120,
+          "exact": 0.6333333333333333,
+          "within_1": 0.925,
+          "mean_abs_diff": 0.45,
+          "mean_signed_diff": 0.11666666666666667,
+          "cohen_kappa": 0.5147058823529411,
+          "cohen_kappa_quadratic": 0.8180730101735487
+        },
+        {
+          "rater_a": "ann-02",
+          "rater_b": "ann-03",
+          "n": 120,
+          "exact": 0.35,
+          "within_1": 0.75,
+          "mean_abs_diff": 0.925,
+          "mean_signed_diff": 0.7583333333333333,
+          "cohen_kappa": 0.10865631844586243,
+          "cohen_kappa_quadratic": 0.5430331280173132
+        }
+      ]
+    },
+    "instruction_following": {
+      "n_units": 120,
+      "krippendorff_alpha_ordinal": 0.5517322017739563,
+      "krippendorff_alpha_interval": 0.5205329221681723,
+      "krippendorff_alpha_nominal": 0.27167097012172625,
+      "krippendorff_alpha_interval_bias_corrected": 0.5652116537063487,
+      "fleiss_kappa": 0.26964219845075604,
+      "mean_cohen_kappa": 0.27272229973113016,
+      "mean_cohen_kappa_quadratic": 0.5073570038407286,
+      "pairwise": [
+        {
+          "rater_a": "ann-01",
+          "rater_b": "ann-02",
+          "n": 120,
+          "exact": 0.6666666666666666,
+          "within_1": 0.8916666666666667,
+          "mean_abs_diff": 0.4583333333333333,
+          "mean_signed_diff": -0.375,
+          "cohen_kappa": 0.2350597609561751,
+          "cohen_kappa_quadratic": 0.42743288590604034
+        },
+        {
+          "rater_a": "ann-01",
+          "rater_b": "ann-03",
+          "n": 120,
+          "exact": 0.6833333333333333,
+          "within_1": 0.9333333333333333,
+          "mean_abs_diff": 0.38333333333333336,
+          "mean_signed_diff": -0.016666666666666666,
+          "cohen_kappa": 0.3892311813554782,
+          "cohen_kappa_quadratic": 0.7070174056863826
+        },
+        {
+          "rater_a": "ann-02",
+          "rater_b": "ann-03",
+          "n": 120,
+          "exact": 0.6416666666666667,
+          "within_1": 0.875,
+          "mean_abs_diff": 0.49166666666666664,
+          "mean_signed_diff": 0.35833333333333334,
+          "cohen_kappa": 0.1938759568817372,
+          "cohen_kappa_quadratic": 0.3876207199297631
+        }
+      ]
+    },
+    "hallucination": {
+      "n_units": 120,
+      "krippendorff_alpha_ordinal": 0.7802767037912034,
+      "krippendorff_alpha_interval": 0.8647295159898176,
+      "krippendorff_alpha_nominal": 0.3791156795562082,
+      "krippendorff_alpha_interval_bias_corrected": 0.8895059786964791,
+      "fleiss_kappa": 0.3773861967694568,
+      "mean_cohen_kappa": 0.38705366674277214,
+      "mean_cohen_kappa_quadratic": 0.860328053397537,
+      "pairwise": [
+        {
+          "rater_a": "ann-01",
+          "rater_b": "ann-02",
+          "n": 120,
+          "exact": 0.75,
+          "within_1": 0.925,
+          "mean_abs_diff": 0.325,
+          "mean_signed_diff": -0.2916666666666667,
+          "cohen_kappa": 0.41615309763217645,
+          "cohen_kappa_quadratic": 0.8473486877343331
+        },
+        {
+          "rater_a": "ann-01",
+          "rater_b": "ann-03",
+          "n": 120,
+          "exact": 0.725,
+          "within_1": 0.975,
+          "mean_abs_diff": 0.3,
+          "mean_signed_diff": 0.13333333333333333,
+          "cohen_kappa": 0.4610778443113773,
+          "cohen_kappa_quadratic": 0.9174528301886793
+        },
+        {
+          "rater_a": "ann-02",
+          "rater_b": "ann-03",
+          "n": 120,
+          "exact": 0.6416666666666667,
+          "within_1": 0.9166666666666666,
+          "mean_abs_diff": 0.44166666666666665,
+          "mean_signed_diff": 0.425,
+          "cohen_kappa": 0.2839300582847627,
+          "cohen_kappa_quadratic": 0.8161826422695988
+        }
+      ]
+    },
+    "style": {
+      "n_units": 120,
+      "krippendorff_alpha_ordinal": 0.38842456248410395,
+      "krippendorff_alpha_interval": 0.41178025137686436,
+      "krippendorff_alpha_nominal": 0.19443719668110426,
+      "krippendorff_alpha_interval_bias_corrected": 0.5422058805750003,
+      "fleiss_kappa": 0.19219328915096778,
+      "mean_cohen_kappa": 0.21784964246801153,
+      "mean_cohen_kappa_quadratic": 0.435250252532481,
+      "pairwise": [
+        {
+          "rater_a": "ann-01",
+          "rater_b": "ann-02",
+          "n": 120,
+          "exact": 0.5,
+          "within_1": 0.9333333333333333,
+          "mean_abs_diff": 0.6083333333333333,
+          "mean_signed_diff": -0.5916666666666667,
+          "cohen_kappa": 0.13043478260869557,
+          "cohen_kappa_quadratic": 0.3582578531508962
+        },
+        {
+          "rater_a": "ann-01",
+          "rater_b": "ann-03",
+          "n": 120,
+          "exact": 0.6333333333333333,
+          "within_1": 0.9333333333333333,
+          "mean_abs_diff": 0.44166666666666665,
+          "mean_signed_diff": 0.09166666666666666,
+          "cohen_kappa": 0.44286166508388736,
+          "cohen_kappa_quadratic": 0.6428571428571428
+        },
+        {
+          "rater_a": "ann-02",
+          "rater_b": "ann-03",
+          "n": 120,
+          "exact": 0.43333333333333335,
+          "within_1": 0.8666666666666667,
+          "mean_abs_diff": 0.7166666666666667,
+          "mean_signed_diff": 0.6833333333333333,
+          "cohen_kappa": 0.08025247971145166,
+          "cohen_kappa_quadratic": 0.304635761589404
+        }
+      ]
+    }
+  }
+}
